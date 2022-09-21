@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -8,7 +9,7 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Sidebar from './Sidebar';
+import All_table from './All_table';
 import Chart_Compare from './Chart_Compare';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +17,7 @@ root.render(
   <BrowserRouter >
       <Routes>
       <Route path="/" element={<App />} />
-      <Route path="sidebar" element={<Sidebar />} />
+      <Route path="all_table" element={<All_table />} />
       <Route path="chart_compare" element={<Chart_Compare />} />
     </Routes>
   </BrowserRouter >

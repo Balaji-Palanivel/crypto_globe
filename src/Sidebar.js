@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import {
   CDBSidebar,
@@ -21,16 +22,16 @@ const Sidebar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink exact to="/" >
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/sidebar" activeClassName="activeClicked">
+            <NavLink exact to="/all_table" >
               <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/chart_compare" activeClassName="activeClicked">
+            <NavLink exact to="/chart_compare" >
               <CDBSidebarMenuItem icon="chart-line">Charts</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+            <NavLink exact to="/profile" >
               <CDBSidebarMenuItem icon="exclamation-circle"> About</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>

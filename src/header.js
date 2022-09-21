@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { Component } from "react"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +11,7 @@ export default class header extends Component {
             <header>
                 <div className='row'>
                     <div className="col-md-12 header" grid-area="header" style={{ width: "85%" }}>
-                        Crypto  <i data-test="fa" class="sc-gSAPjG vdkON fa fa-globe"></i>  Globe
+                        Crypto  <i data-test="fa" className="sc-gSAPjG vdkON fa fa-globe"></i>  Globe
                     </div>
                 </div>
             </header>

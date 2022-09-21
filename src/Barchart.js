@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { Component } from 'react';
 import moment from 'moment';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
@@ -9,7 +10,7 @@ export default class Barchart extends Component {
 
         return (<div >
             <BarChart
-                width={1000}
+                width={1150}
                 height={600}
                 data={this.props.data}
                 margin={{

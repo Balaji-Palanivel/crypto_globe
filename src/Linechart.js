@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { Component } from 'react';
 import moment from 'moment';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
@@ -10,7 +11,7 @@ export default class Linechart extends Component {
         return (
 
             <LineChart
-                width={1000}
+                width={1150}
                 height={600}
                 data={this.props.data}
                 margin={{

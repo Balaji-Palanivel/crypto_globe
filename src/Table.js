@@ -1,11 +1,13 @@
+/*eslint-disable*/
 import { Component } from "react";
-import Chart from './Chart';
-import { Button } from "bootstrap";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 export default class Table_1 extends Component {
     constructor(props) {
         super(props);
-      this.state = this.props;
+     
     }
 
     render() {

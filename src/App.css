@@ -65,11 +65,13 @@
     align-items: center;
 }
 
-.featuredMoney{
-    font-size: 30px;
-    font-weight: 600;
+.featuredMoney {
+  font-size: 39px;
+  font-weight: 600;
+  top: 46px;
+  right: 215px;
+  position: absolute;
 }
-
 .featuredMoneyRate{
     display: flex;
     align-items: center;
@@ -99,7 +101,7 @@
   top: 78px;
   width: 224px;
   right: 11px;
-  height: 500px;
+  height: 890px;
   overflow: auto;
 }
 .header {
@@ -113,3 +115,14 @@
   text-align: center;
   background-color: rgb(24, 24, 24);
 }
+
+.icon {
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  right: 69px;
+  z-index: 0;
+  font-size: 117px;
+  color: rgb(0 0 0 / 15%);
+}
+

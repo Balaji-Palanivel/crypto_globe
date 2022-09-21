@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { Component } from 'react';
 import moment from 'moment';
 import { AreaChart, Area, XAxis, YAxis, Tooltip } from 'recharts';
@@ -9,7 +10,7 @@ export default class AreChart extends Component {
 
     return (<div >
       <AreaChart
-         width={1000}
+         width={1150}
          height={600}
          data={this.props.data}
          margin={{

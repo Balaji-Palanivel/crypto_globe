@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +8,7 @@ import Sidebar from './Sidebar';
 import Chart from './Chart';
 import $ from 'jquery';
 import Table_1 from './Table';
-
+import Chart_compare from './Chart_Compare';
 
 export default class App extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class App extends Component {
     })
       .done(
         function (abcd) {
-          console.log(abcd.data);
+       
           this.setState({ chart_data: abcd.data , topvalue : abcd.data[abcd.data.length -1].priceUsd , coin_name:"Bitcoin", coin_symbol: "BTC"});
         }.bind(this)
       )
@@ -45,7 +46,7 @@ export default class App extends Component {
     })
       .done(
         function (abcd) {
-          console.log(abcd.data);
+          
           this.setState({ all_assests: abcd.data });
         }.bind(this)
       )
@@ -76,7 +77,7 @@ export default class App extends Component {
         }
       );
   }
-  render() {console.log(this.state.topvalue);
+  render() {
 
     return (
     
@@ -88,7 +89,7 @@ export default class App extends Component {
               Coin_Symbol={this.state.coin_symbol} /></div>
 
           <div className="col-md-2" > <Table_1 All_assests={this.state.all_assests} 
-                                               SetCoin={this.set_Coin} /></div>
+                                               SetCoin={this.set_Coin} /></div>          
         </div>
      
     );
