@@ -77,7 +77,7 @@ export default class Chart_compare extends Component {
                 function (datas) {
                 }
             );
-            this.arr_put();
+            
     }
 
     arr_put() {
@@ -115,7 +115,7 @@ export default class Chart_compare extends Component {
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
-                <div className="col-md-1 btn btn-danger" style={{ position: "fixed", left: "924px", top: "200px" }}><i className="fa fa-chart" aria-hidden="true"></i>Compare</div>
+                <div onClick={this.arr_put} className="col-md-1 btn btn-danger" style={{ position: "fixed", left: "924px", top: "200px" }}><i className="fa fa-chart" aria-hidden="true"></i>Compare</div>
                 <div className="col-md-4" style={{ position: "fixed", left: "1194px", top: "100px" }}>
                     <Dropdown >
                         <Dropdown.Toggle variant="info" style={{ width: "237px" }}>
@@ -129,16 +129,16 @@ export default class Chart_compare extends Component {
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
-                <div>
+                <div  style={{position: "fixed",top: "237px",left: "402px"}}>
                     <ComposedChart
                         width={1150}
                         height={600}
                         data={this.state.new_arr}
                         margin={{
-                            top: 290,
-                            right: 390,
-                            left: 450,
-                            bottom: 20,
+                            top: 190,
+                            right: 30,
+                            left: 50,
+                            bottom: 5,
                         }}
                     >
                         <CartesianGrid stroke="#f5f5f5" />

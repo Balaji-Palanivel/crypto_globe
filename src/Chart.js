@@ -25,9 +25,9 @@ export default class Chart extends Component {
 
     }
 
-    setBar() { this.setState({ Bar: true, Area: false, Line: false }) }
-    setLine(value) { this.setState({ Bar: false, Area: false, Line: true, drop_item : value }) }
-    setArea() { this.setState({ Bar: false, Area: true, Line: false }) }
+    setBar(e) { this.setState({ Bar: true, Area: false, Line: false ,drop_item : e}) }
+    setLine(e) { this.setState({ Bar: false, Area: false, Line: true, drop_item : e}) }
+    setArea(e) { this.setState({ Bar: false, Area: true, Line: false,drop_item : e }) }
     dateFormatter = (item) => { return moment(new Date(item)).format('MMM YY') }
     render() {
         return (
@@ -42,9 +42,9 @@ export default class Chart extends Component {
                                 {this.state.drop_item}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item onClick={(e) => this.setLine(e.target.value)}>Linechart</Dropdown.Item>
-                                <Dropdown.Item onClick={(e) => this.setBar(e)}> Barchart </Dropdown.Item>
-                                <Dropdown.Item onClick={(e) => this.setArea(e)}>Areachart</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => this.setLine("Linechart")}>Linechart</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => this.setBar("Barchart")}> Barchart </Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => this.setArea("Areachart")}>Areachart</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
