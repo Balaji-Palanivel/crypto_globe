@@ -13,8 +13,6 @@ import Header from './header';
 export default class Chart extends Component {
     constructor(props) {
         super(props);
-        var today = new Date(),
-            date = today.getDate() + ' - ' + (today.getMonth() + 1) + ' - ' + today.getFullYear();
         this.state = {
             chart_data: [],
             topvalue: 0,

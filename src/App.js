@@ -10,6 +10,8 @@ import $ from 'jquery';
 import Table_1 from './Table';
 import Chart_compare from './Chart_Compare';
 
+
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,7 @@ export default class App extends Component {
       chart_data :[],
       coin_name : "",
       coin_symbol : "",
-      topvalue : 0   
+      topvalue : 0  
     };
     this.set_Coin = this.set_Coin.bind(this);
   }
@@ -37,6 +39,7 @@ export default class App extends Component {
         function (datas) {
         }
       );
+     
     this.apicall(); }
 
   apicall() {
@@ -70,6 +73,7 @@ export default class App extends Component {
             coin_symbol: symbol
           });
 
+
         }.bind(this)
       )
       .fail(
@@ -78,7 +82,7 @@ export default class App extends Component {
       );
   }
   render() {
-
+console.log(this.state.bitCoin);
     return (
     
         <div className="row">
@@ -89,7 +93,8 @@ export default class App extends Component {
               Coin_Symbol={this.state.coin_symbol} /></div>
 
           <div className="col-md-2" > <Table_1 All_assests={this.state.all_assests} 
-                                               SetCoin={this.set_Coin} /></div>          
+                                               SetCoin={this.set_Coin} /></div>      
+             
         </div>
      
     );
