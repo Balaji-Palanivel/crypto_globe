@@ -36,6 +36,7 @@ export default class Chart_compare extends Component {
        
     }
     dateFormatter_1 = (item) => { return moment(new Date(item)).format('DD MMM YY') }
+    dateFormatter = (item) => { return moment(new Date(item)).format('MMM YY') }
     componentWillMount() {
         this.fun_2();
         this.api_Call();
@@ -148,7 +149,7 @@ export default class Chart_compare extends Component {
             <div>
                 <div><Header /></div>
                 <div><Sidebar /></div>
-                <div style={{ position: "fixed", left: "549px", top: "100px" }}>
+                <div style={{ position: "absolute", left: "549px", top: "100px" }}>
                     <Dropdown >
                         <Dropdown.Toggle variant="info" style={{ width: "237px" }}>
                             {this.state.drop_item}
@@ -162,7 +163,7 @@ export default class Chart_compare extends Component {
                     </Dropdown>
                 </div>
                 <div onClick={this.arr_put} className="btn btn-danger" style={{ position: "fixed", left: "924px", top: "100px" }}><i data-test="fa" className="sc-gSAPjG vdkON fa fa-chart-line"></i>Compare</div>
-                <div style={{ position: "fixed", left: "1194px", top: "100px" }}>
+                <div style={{ position: "absolute", left: "1194px", top: "100px" }}>
                     <Dropdown >
                         <Dropdown.Toggle variant="info" style={{ width: "237px" }}>
                             {this.state.drop_item_1}
@@ -175,10 +176,10 @@ export default class Chart_compare extends Component {
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
-                <div style={{ position: "fixed", top: "200px", left: "402px" }}>
+                <div style={{ position: "fixed", top: "150px", left: "450px" }}>
                     <ComposedChart
-                        width={650}
-                        height={300}
+                        width={1050}
+                        height={550}
                         data={this.state.new_arr}
                         margin={{
                             top: 190,
@@ -190,17 +191,18 @@ export default class Chart_compare extends Component {
                         <CartesianGrid stroke="#f5f5f5" />
                         <XAxis
                             dataKey="date"
+                            tickFormatter={this.dateFormatter}
                         />
                         <YAxis />
                         <Tooltip labelFormatter={this.dateFormatter_1} formatter={(value, name) => (name === "priceUsd_1" || name === "priceUsd_2") ? parseInt(value) : value.toLocaleString()}/>
                         <Legend />
-                        <Area dataKey="priceUsd_1" barSize={20} fill="#413ea" />
+                        <Area dataKey="priceUsd_1" barSize={20} fill="#31E1F7" />
                         <Area dataKey="priceUsd_2" barSize={20} fill="#413ea0" />
 
                     </ComposedChart>
                 </div>
-                <div id="Table" className="table_style_1 " style={{width: "1050px", height: "100px",bottom : "20px",right:"200px"}}>
-                            <table className="table">
+                <div className="compare_table">
+                            <table className="table table_style_1">
                             <tbody>
                             <tr >
                                     <thead>Name</thead>                                 
@@ -214,8 +216,8 @@ export default class Chart_compare extends Component {
                              </tr>
                              <tr >
                                  <thead>Today's Price</thead>
-                                 <td>{this.findvalid(parseInt(this.state.tab_data1.priceUsd))}</td>   
-                                 <td>{this.findvalid(parseInt(this.state.tab_data2.priceUsd))}</td>                         
+                                 <td>${this.findvalid(parseInt(this.state.tab_data1.priceUsd))}</td>   
+                                 <td>${this.findvalid(parseInt(this.state.tab_data2.priceUsd))}</td>                         
                              </tr>
                              <tr >
                                  <thead>Maximum Supply</thead>     

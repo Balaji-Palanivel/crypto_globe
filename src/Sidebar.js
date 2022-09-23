@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <div className="menu" style={{ display: 'flex', position : "fixed", height: '100vh', overflow: 'scroll initial'}}>
       <CDBSidebar textColor="#fff" backgroundColor="#181818">
-        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+        <CDBSidebarHeader >
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             Dashboard
           </a>
@@ -31,7 +31,7 @@ const Sidebar = () => {
             <NavLink exact to="/chart_compare" >
               <CDBSidebarMenuItem icon="chart-line">Charts</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" >
+            <NavLink exact to="/about" >
               <CDBSidebarMenuItem icon="exclamation-circle"> About</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>

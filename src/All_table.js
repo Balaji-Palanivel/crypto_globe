@@ -72,7 +72,7 @@ export default class All_table extends Component {
             }
 
         }
-        else if (sortKey == "work_count") {
+        else if (sortKey == "priceUsd" || sortKey == "maxSupply") {
 
             if (this.state.order == "Asc") {
                 data.sort((a, b) => a[sortKey] - b[sortKey])
@@ -120,11 +120,11 @@ export default class All_table extends Component {
                             <thead>
                                 <tr>
                                     <td>S.No </td>
-                                    <td >Symbol <i onClick={e => this.sorting_table(e, "name")} className="fa fa-fw fa-sort"></i></td>
-                                    <td>Name </td>
-                                    <td>Price </td>
-                                    <td >Max Supply <i onClick={e => this.sorting_table(e, "work_count")} className="fa fa-fw fa-sort"></i></td>
-                                    <td>Change Persent</td>
+                                    <td >Symbol </td>
+                                    <td>Name <i onClick={e => this.sorting_table(e, "name")} className="fa fa-fw fa-sort"></i></td>
+                                    <td>Price <i onClick={e => this.sorting_table(e, "priceUsd")} className="fa fa-fw fa-sort"></i></td>
+                                    <td >Max Supply <i onClick={e => this.sorting_table(e, "maxSupply")} className="fa fa-fw fa-sort"></i></td>
+                                    <td>Change Persent /24Hr</td>
                                     <td>Explorer</td>
                                 </tr>
                             </thead>

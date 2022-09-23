@@ -20,7 +20,8 @@ export default class App extends Component {
       chart_data :[],
       coin_name : "",
       coin_symbol : "",
-      topvalue : 0  
+      topvalue : 0 ,
+      coin_data: []
     };
     this.set_Coin = this.set_Coin.bind(this);
   }
@@ -58,7 +59,7 @@ export default class App extends Component {
         }
       );
   }
-  set_Coin(id, name, symbol) {
+  set_Coin(id, name, symbol,inx) {
     $.ajax({
       url: "https://api.coincap.io/v2/assets/" + id + "/history?interval=d1",
       contentType: "application/json"
@@ -70,7 +71,8 @@ export default class App extends Component {
             chart_data: abcd.data,
             topvalue: abcd.data[abcd.data.length - 1].priceUsd,
             coin_name: name,
-            coin_symbol: symbol
+            coin_symbol: symbol,
+            coin_data : this.state.all_assests[inx]
           });
 
 
@@ -81,8 +83,7 @@ export default class App extends Component {
         }
       );
   }
-  render() {
-console.log(this.state.bitCoin);
+  render() {console.log(this.state.coin_data);
     return (
     
         <div className="row">
@@ -90,7 +91,8 @@ console.log(this.state.bitCoin);
           <div className="col-md-4 c" > <Chart Chart_Data={this.state.chart_data}
               Topvalue={this.state.topvalue}
               Coin_Name={this.state.coin_name}
-              Coin_Symbol={this.state.coin_symbol} /></div>
+              Coin_Symbol={this.state.coin_symbol}
+              Coin_Data = {this.state.coin_data} /></div>
 
           <div className="col-md-2" > <Table_1 All_assests={this.state.all_assests} 
                                                SetCoin={this.set_Coin} /></div>      

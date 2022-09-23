@@ -10,7 +10,7 @@ export default class header extends Component {
         <div>
             <header>
                 <div className='row'>
-                    <div className="col-md-12 header" grid-area="header" style={{ width: "85%" }}>
+                    <div className="col-md-12 header" grid-area="header" style={{ width: "90%" , left :"190px"}}>
                         Crypto  <i data-test="fa" className="sc-gSAPjG vdkON fa fa-globe"></i>  Globe
                     </div>
                 </div>

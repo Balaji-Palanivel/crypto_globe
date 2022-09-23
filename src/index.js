@@ -11,6 +11,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import All_table from './All_table';
 import Chart_Compare from './Chart_Compare';
+import About from './About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="all_table" element={<All_table />} />
       <Route path="chart_compare" element={<Chart_Compare />} />
+      <Route path="about" element={<About />} />
     </Routes>
   </BrowserRouter >
 );
